@@ -1,6 +1,6 @@
-# 📦 Cheat Sheet - Git Commands
+# 📦 Cheat Sheet - Git
 
-> 📚 Um guia completo sobre comandos Git e suas utilizações
+> 📝 Um guia completo sobre Git e seus comandos mais utilizados
 
 ## 📑 Índice
 1. [Configuração Inicial](#configuração-inicial)
@@ -10,8 +10,9 @@
 5. [Inspeção e Comparação](#inspeção-e-comparação)
 6. [Desfazer Mudanças](#desfazer-mudanças)
 7. [Recursos Avançados](#recursos-avançados)
+8. [Exemplos Práticos](#exemplos-práticos)
 
-## Configuração Inicial
+## ⚙️ Configuração Inicial
 
 ### Configurações Globais
 | Comando | Descrição | Exemplo | Resultado |
@@ -28,7 +29,7 @@
 | `git clone` | Clona repositório | `git clone https://github.com/user/repo.git` | Copia repositório remoto |
 | `git clone --depth` | Clona com histórico limitado | `git clone --depth 1 url` | Clone mais rápido |
 
-## Comandos Básicos
+## 🔨 Comandos Básicos
 
 ### Área de Trabalho
 | Comando | Descrição | Exemplo | Resultado |
@@ -47,7 +48,7 @@
 | `git log --graph` | Histórico gráfico | `git log --graph` | Árvore de commits |
 | `git show` | Detalhes do commit | `git show abc123` | Info do commit |
 
-## Branches e Merging
+## 🌿 Branches e Merging
 
 ### Gerenciamento de Branches
 | Comando | Descrição | Exemplo | Resultado |
@@ -66,7 +67,7 @@
 | `git merge --abort` | Cancela merge | `git merge --abort` | Desfaz merge com conflito |
 | `git rebase --abort` | Cancela rebase | `git rebase --abort` | Desfaz rebase |
 
-## Trabalho Remoto
+## 🌐 Trabalho Remoto
 
 ### Repositórios Remotos
 | Comando | Descrição | Exemplo | Resultado |
@@ -84,7 +85,7 @@
 | `git branch -vv` | Mostra tracking | `git branch -vv` | Info de tracking |
 | `git remote show` | Info do remote | `git remote show origin` | Detalhes do remote |
 
-## Inspeção e Comparação
+## 🔍 Inspeção e Comparação
 
 ### Diferenças
 | Comando | Descrição | Exemplo | Resultado |
@@ -100,7 +101,7 @@
 | `git bisect` | Busca binária | `git bisect start` | Encontra bug |
 | `git grep` | Busca no código | `git grep "TODO"` | Encontra padrão |
 
-## Desfazer Mudanças
+## ↩️ Desfazer Mudanças
 
 ### Working Directory
 | Comando | Descrição | Exemplo | Resultado |
@@ -120,7 +121,7 @@
 | `git push --force` | Força push | `git push --force origin main` | Sobrescreve histórico |
 | `git push --force-with-lease` | Força push seguro | `git push --force-with-lease origin main` | Força push com verificação |
 
-## Recursos Avançados
+## 🚀 Recursos Avançados
 
 ### Stash
 | Comando | Descrição | Exemplo | Resultado |
@@ -146,7 +147,7 @@
 | `git submodule add` | Adiciona submódulo | `git submodule add url path` | Novo submódulo |
 | `git submodule update` | Atualiza submódulos | `git submodule update --init` | Sincroniza submódulos |
 
-### Exemplos Práticos
+## 📝 Exemplos Práticos
 
 #### Fluxo Básico
 ```bash
