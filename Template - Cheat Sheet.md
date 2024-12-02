@@ -4,9 +4,11 @@
 
 ### 1️⃣ Cabeçalho
 ```markdown
-# [EMOJI] Cheat Sheet - [Nome da Tecnologia]
+# [EMOJI] Cheat Sheet - [Nome da Tecnologia] Commands.md
 
 > 📝 Um guia completo sobre [Nome da Tecnologia]
+> 📅 Última atualização: [DATA]
+> 🔗 Versão da tecnologia: [VERSÃO]
 ```
 
 ### 2️⃣ Índice Padrão
@@ -24,22 +26,32 @@
 
 #### Tabelas de Referência
 ```markdown
-| Elemento | Descrição | Exemplo | Resultado |
-|----------|-----------|---------|-----------|
-| `código` | Explicação | `exemplo` | saída |
+| 🔍 Comando | Descrição | Exemplo | Resultado |
+|------------|-----------|---------|-----------|
+| `comando`  | Explicação| `exemplo` | saída |
 ```
 
 #### Blocos de Código
 ```markdown
-### 📝 Exemplo Prático: [Nome da Seção]
-```bash
-# Código comentado
-código_exemplo    # -----------------------> Explicação
+<div class="example">
+### 📝 Exemplo: [Nome do Exemplo]
+
+\```bash
+# Comentário explicativo
+código_exemplo    # -----------------------> Resultado esperado
+\```
+</div>
 ```
 
 #### Dicas e Observações
 ```markdown
-> 💡 **Dica:** Texto da dica ou observação importante
+<div class="tip">
+💡 **Dica:** Texto da dica ou observação importante
+</div>
+
+<div class="warning">
+⚠️ **Atenção:** Texto do aviso importante
+</div>
 ```
 
 ### 4️⃣ Estilo e Formatação
@@ -81,6 +93,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 table {
@@ -97,12 +110,23 @@ th, td {
     border-bottom: 1px solid var(--border);
 }
 
+td:nth-child(1) {
+    width: 20%;
+    color: var(--text-accent);
+}
+
+td:nth-child(2) {
+    width: 30%;
+}
+
 td:nth-child(3) {
+    width: 25%;
     font-family: 'Consolas', monospace;
     color: var(--string);
 }
 
 td:nth-child(4) {
+    width: 25%;
     color: var(--comment);
     font-style: italic;
 }
@@ -114,25 +138,79 @@ code {
     border-radius: 3px;
 }
 
+h1 {
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
 h2 {
     color: var(--text-accent);
     border-bottom: 1px solid var(--text-accent);
     padding-bottom: 5px;
+    margin-top: 30px;
 }
 
 h3 {
     color: var(--keyword);
+    margin-top: 20px;
 }
 
 .example {
     background-color: var(--bg-tertiary);
-    padding: 8px;
+    padding: 12px;
     border-radius: 4px;
-    margin-top: 4px;
+    margin: 10px 0;
     font-size: 0.9em;
+    border-left: 3px solid var(--text-accent);
+}
+
+.tip {
+    background-color: var(--bg-tertiary);
+    padding: 12px;
+    border-radius: 4px;
+    margin: 10px 0;
+    border-left: 3px solid var(--keyword);
+}
+
+.warning {
+    background-color: var(--bg-tertiary);
+    padding: 12px;
+    border-radius: 4px;
+    margin: 10px 0;
+    border-left: 3px solid #d7ba7d;
 }
 </style>
 ```
+
+#### JavaScript para Funcionalidades Interativas
+```javascript
+<script>
+// Função para copiar código para a área de transferência
+function copyToClipboard(element) {
+    const code = element.parentElement.querySelector('code').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+        const originalText = element.textContent;
+        element.textContent = '✅ Copiado!';
+        setTimeout(() => {
+            element.textContent = originalText;
+        }, 2000);
+    });
+}
+
+// Função para adicionar botões de cópia a todos os blocos de código
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('pre').forEach(block => {
+        const button = document.createElement('button');
+        button.className = 'copy-button';
+        button.textContent = '📋 Copiar';
+        button.onclick = () => copyToClipboard(button);
+        block.style.position = 'relative';
+        block.insertBefore(button, block.firstChild);
+    });
+});
+</script>
 
 ## 📋 Instruções de Uso
 
@@ -201,26 +279,32 @@ h3 {
 
 ### Tabela de Comandos/Sintaxe
 ```markdown
-| Comando | Descrição | Exemplo | Resultado |
-|---------|-----------|---------|-----------|
-| `comando` | Descrição breve | `exemplo` | Saída esperada |
+| 🔍 Comando | Descrição | Exemplo | Resultado |
+|------------|-----------|---------|-----------|
+| `comando`  | Explicação| `exemplo` | saída |
 ```
 
 ### Bloco de Código com Explicação
 ```markdown
+<div class="example">
 ### 📝 Exemplo: Nome do Exemplo
-```linguagem
+
+\```bash
 # Comentário explicativo
-código_exemplo    # -----------------------> Explicação detalhada
+código_exemplo    # -----------------------> Resultado esperado
+\```
+</div>
 ```
 
 ### Seção de Dicas
 ```markdown
-> 💡 **Dica Pro:** Dica importante sobre o tópico
-> 
-> ⚠️ **Atenção:** Aviso sobre possíveis problemas
-> 
-> 🔑 **Chave:** Conceito fundamental
+<div class="tip">
+💡 **Dica Pro:** Dica importante sobre o tópico
+</div>
+
+<div class="warning">
+⚠️ **Atenção:** Aviso sobre possíveis problemas
+</div>
 ```
 
 ### Referências e Links
